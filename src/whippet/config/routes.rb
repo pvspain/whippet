@@ -1,5 +1,7 @@
 Whippet::Application.routes.draw do
-  resources :books
+  resources :books do
+    resources :versions
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

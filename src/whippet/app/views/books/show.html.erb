@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Isbn:</b>
-  <%= @book.isbn %>
-</p>
-
-<p>
   <b>Title:</b>
   <%= @book.title %>
 </p>
@@ -20,11 +15,34 @@
   <%= @book.publisher %>
 </p>
 
+ 
+<h2>Versions</h2>
+<% @book.versions.each do |version| %>
 <p>
-  <b>Version:</b>
-  <%= @book.version %>
+  <b>Edition:</b>
+  <%= version.edition %>
 </p>
 
+<p>
+  <b>Isbn:</b>
+  <%= version.isbn %>
+</p>
+<% end %>
+ 
+<h2>Add a version:</h2>
+<%= form_for([@book, @book.versions.build]) do |f| %>
+  <div class="field">
+    <%= f.label :edition %><br />
+    <%= f.text_field :edition %>
+  </div>
+  <div class="field">
+    <%= f.label :isbn %><br />
+    <%= f.text_field :isbn %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
