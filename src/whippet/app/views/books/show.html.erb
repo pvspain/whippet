@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= debug @book.versions %>
+
 <p>
   <b>Title:</b>
   <%= @book.title %>
@@ -17,17 +19,7 @@
 
  
 <h2>Versions</h2>
-<% @book.versions.each do |version| %>
-<p>
-  <b>Edition:</b>
-  <%= version.edition %>
-</p>
-
-<p>
-  <b>Isbn:</b>
-  <%= version.isbn %>
-</p>
-<% end %>
+<%= render @book.versions %>
  
 <h2>Add a version:</h2>
 <%= form_for([@book, @book.versions.build]) do |f| %>
