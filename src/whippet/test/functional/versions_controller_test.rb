@@ -7,7 +7,7 @@ class VersionsControllerTest < ActionController::TestCase
 
   test "should create version" do
     assert_difference('Version.count') do
-      post :create, version: @version.attributes, :book_id => @version.book_id, version: @version.attributes
+      post :create, version: @version.attributes, :book_id => @version.book_id
     end
 
     assert_redirected_to @version.book, assigns(:version)
