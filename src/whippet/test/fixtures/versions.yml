@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+version1:
   edition: MyString
-  isbn: MyString
-  book: 
+  isbn: 1234567890
+  book: book1
 
 two:
   edition: MyString

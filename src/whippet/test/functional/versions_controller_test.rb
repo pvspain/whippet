@@ -2,13 +2,7 @@ require 'test_helper'
 
 class VersionsControllerTest < ActionController::TestCase
   setup do
-    @version = versions(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:versions)
+    @version = versions(:version1)
   end
 
   test "should get new" do
@@ -18,7 +12,7 @@ class VersionsControllerTest < ActionController::TestCase
 
   test "should create version" do
     assert_difference('Version.count') do
-      post :create, version: @version.attributes
+      post :create, :book_id => @version.book_id, version: @version.attributes
     end
 
     assert_redirected_to version_path(assigns(:version))
