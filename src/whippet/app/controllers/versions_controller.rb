@@ -7,7 +7,7 @@ class VersionsController < ApplicationController
         format.html { redirect_to @book, notice: 'Version was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else
-        format.html { redirect_to book_path @book }
+        format.html { render "books/show" }
         format.json { render json: @version.errors, status: :unprocessable_entity }
       end   
     end 
