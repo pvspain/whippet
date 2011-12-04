@@ -1,15 +1,17 @@
-<p>
-  <b>Edition:</b>
-  <%= version.edition %>
-</p>
+<% if version.valid? %>
+	<p>
+	  <b>Edition:</b>
+	  <%= version.edition %>
+	</p>
 
-<p>
-  <b>Isbn:</b>
-  <%= version.isbn %>
-</p>
+	<p>
+	  <b>Isbn:</b>
+	  <%= version.isbn %>
+	</p>
 
-<p>
-  <%= link_to 'Remove Version', [version.book, version],
-               :confirm => 'Are you sure?',
-               :method => :delete %>
-</p>
+	<p>
+	  <%= link_to 'Remove Version', [version.book, version],
+	               :confirm => 'Are you sure?',
+	               :method => :delete %>
+	</p>
+<% end %>
